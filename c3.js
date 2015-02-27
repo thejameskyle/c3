@@ -25,7 +25,9 @@
 
     function ChartInternal(api) {
         var $$ = this;
-        $$.d3 = window.d3 ? window.d3 : typeof require !== 'undefined' ? require("d3") : undefined;
+        try {
+            $$.d3 = window.d3 ? window.d3 : typeof require !== 'undefined' ? require("d3") : undefined;
+        } catch(e) {}
         $$.api = api;
         $$.config = $$.getDefaultConfig();
         $$.data = {};
