@@ -27,7 +27,9 @@
         var $$ = this;
         try {
             $$.d3 = window.d3 ? window.d3 : typeof require !== 'undefined' ? require("d3") : undefined;
-        } catch(e) {}
+        } catch(e) {
+            $$.d3 = require("d3");
+        }
         $$.api = api;
         $$.config = $$.getDefaultConfig();
         $$.data = {};
